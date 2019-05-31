@@ -12,13 +12,13 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Person</h4>
+        <h4>Superhero</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Id)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.superheroName, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Superhero Name", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.superheroName, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.superheroName, "", new { @class = "text-danger" })
@@ -26,7 +26,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.alterEgo, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Alter Ego", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.alterEgo, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.alterEgo, "", new { @class = "text-danger" })
@@ -34,7 +34,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.primaryAbility, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Primary Ability", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.primaryAbility, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.primaryAbility, "", new { @class = "text-danger" })
@@ -42,7 +42,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.secondaryAbility, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Secondary Ability", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.secondaryAbility, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.secondaryAbility, "", new { @class = "text-danger" })
@@ -50,7 +50,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.catchPhrase, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Catchphrase", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.catchPhrase, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.catchPhrase, "", new { @class = "text-danger" })

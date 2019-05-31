@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Superhero Database</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -12,19 +12,8 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.superheroName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.alterEgo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.primaryAbility)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.secondaryAbility)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.catchPhrase)
+            @*@Html.DisplayNameFor(model => model.superheroName)*@
+            Superhero Name
         </th>
         <th></th>
     </tr>
@@ -32,23 +21,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.superheroName).ToHtmlString()
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.alterEgo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.primaryAbility)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.secondaryAbility)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.catchPhrase)
+            @Html.ActionLink(Html.DisplayFor(modelItem => item.superheroName).ToHtmlString(), "Details", new { id = item.Id })
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>

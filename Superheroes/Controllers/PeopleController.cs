@@ -40,7 +40,6 @@ namespace Superheroes.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
                 db.People.Add(person);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -64,12 +63,11 @@ namespace Superheroes.Controllers
         {
             try
             {
-                // TODO: Add update logic here
                 Person personToUpdate;
                 personToUpdate = db.People.Where(p => p.Id == id).FirstOrDefault();
                 personToUpdate.superheroName = updatedPerson.superheroName;
                 personToUpdate.alterEgo = updatedPerson.alterEgo;
-                personToUpdate.primaryAbility = updatedPerson.alterEgo;
+                personToUpdate.primaryAbility = updatedPerson.primaryAbility;
                 personToUpdate.secondaryAbility = updatedPerson.secondaryAbility;
                 personToUpdate.catchPhrase = updatedPerson.catchPhrase;
                 db.SaveChanges();
@@ -94,8 +92,6 @@ namespace Superheroes.Controllers
         {
             try
             {
-                
-                // TODO: Add delete logic here
                 person = db.People.Where(p => p.Id == id).FirstOrDefault();
                 db.People.Remove(person);
                 db.SaveChanges();
